@@ -27,3 +27,11 @@ jobs:
     
     - name: Print output
       run: echo ${{steps.rpm.outputs.source_rpm_path}}
+    
+    - name: Upload artifact
+      uses: actions/upload-artifact@v1.0.0
+      with:
+        # Artifact name
+        name: Source RPM
+        # Directory containing files to upload
+        path: ${{steps.rpm.outputs.source_rpm_path}}
