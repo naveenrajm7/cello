@@ -5,7 +5,7 @@ Summary:        Hello World example implemented in C
 
 License:        MIT
 URL:            https://github.com/naveenrajm7/%{name}
-Source0:        https://github.com/naveenrajm7/%{name}/%{name}.tar.gz
+Source0:        https://github.com/naveenrajm7/%{name}/%{name}-%{version}.tar.gz
 
 BuildRequires:  gcc
 BuildRequires:  make
