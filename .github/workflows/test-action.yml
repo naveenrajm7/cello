@@ -3,7 +3,7 @@
 name: RPM Build
 
 # Controls when the action will run. Triggers the workflow on push 
-# on: push
+on: push
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -20,6 +20,10 @@ jobs:
     
     # Runs a community action
     - name: build RPM package
+      id: rpm
       uses: naveenrajm7/rpmbuild@master
       with:
         specFile: "cello.spec"
+    
+    - name: Print output
+      run: echo ${{steps.rpm.outputs.source_rpm_path}}
