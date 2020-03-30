@@ -1,5 +1,5 @@
 Name:           cello
-Version:        1.0.1
+Version:        1.0.2
 Release:        1%{?dist}
 Summary:        Hello World example implemented in C
 
