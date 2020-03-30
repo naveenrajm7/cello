@@ -43,7 +43,7 @@ jobs:
               # Artifact name
               name: Source RPM
               # Directory containing files to upload
-              path: ${{steps.rpm.outputs.source_rpm_path}}
+              path: ${{steps.rpm_build.outputs.source_rpm_path}}
             
         - name: Upload Release Asset
           id: upload-release-asset 
