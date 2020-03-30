@@ -3,7 +3,7 @@
 name: RPM Build
 
 # Controls when the action will run. Triggers the workflow on push 
-#on: push
+on: push
 
 # A workflow run is made up of one or more jobs that can run sequentially or in parallel
 jobs:
@@ -32,6 +32,6 @@ jobs:
       uses: actions/upload-artifact@v1.0.0
       with:
         # Artifact name
-        name: Source RPM
+        name: Binary RPM
         # Directory containing files to upload
-        path: ${{steps.rpm.outputs.source_rpm_path}}
+        path: ${{ steps.rpm.outputs.rpm_dir_path }}
