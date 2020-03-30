@@ -23,7 +23,7 @@ jobs:
       id: rpm
       uses: naveenrajm7/rpmbuild@master
       with:
-        specFile: "cello.spec"
+        spec_file: "cello.spec"
     
     - name: Print output
       run: echo ${{steps.rpm.outputs.source_rpm_path}}
