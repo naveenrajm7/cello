@@ -27,7 +27,7 @@ jobs:
               body: |
                 Changes in this Release
                 - Create RPM
-                - Upload Source RPM
+                - Upload RPM
               draft: false
               prerelease: false
             
@@ -41,9 +41,9 @@ jobs:
           uses: actions/upload-artifact@v1.0.0
           with:
               # Artifact name
-              name: Source RPM
+              name: RPM
               # Directory containing files to upload
-              path: ${{steps.rpm_build.outputs.source_rpm_path}}
+              path: ${{steps.rpm_build.outputs.rpm_dir_path}}
             
         - name: Upload Release Asset
           id: upload-release-asset 
@@ -52,7 +52,7 @@ jobs:
               GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           with:
               upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-              asset_path: ${{ steps.rpm_build.outputs.source_rpm_path }}
+              asset_path: ${{ steps.rpm_build.outputs.rpm_dir_path }}
               asset_name: ${{ steps.rpm_build.outputs.source_rpm_name }}
               asset_content_type: ${{ steps.rpm_build.outputs.rpm_content_type }}
     
